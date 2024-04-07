@@ -1,0 +1,24 @@
+body {
+    width: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img {
+    height: 60px;
+}
+
+nav ol {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ol li {
+    margin: 14px;
+}
+
+
