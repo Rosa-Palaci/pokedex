@@ -9,7 +9,7 @@ nav {
 }
 
 nav img {
-    height: 60px;
+    height: 55px;
 }
 
 nav ol {
@@ -21,4 +21,50 @@ nav ol li {
     margin: 14px;
 }
 
+.video-bg {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    z-index: -1; /*Mantener al fondo*/
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 56.25vw;
+    min-width: 177.77vh;
+    min-height: 100ch;
+    opacity: 0.9;
+    object-fit: cover;
+}
 
+main img {
+    width: 500px;
+}
+
+main h1 {
+    text-align: center;
+}
+
+.hero {
+    display: flex;
+    text-align: center; /**/
+    align-items: center; /*Centrar en horizontal*/
+    justify-content: center; /*Centrar en vertical*/
+    gap: 40px; /*Espacio entre elementos*/
+}
+
+.hero h3,
+.hero img {
+    flex: 1; /* Permite que ambos elementos crezcan y ocupen espacio disponible */
+    max-width: 100%; /* Asegura que no excedan el tamaño del contenedor */
+}
+
+/* Media query para pantallas de 768px o menos */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column; /* Alinea los elementos en columna en pantallas pequeñas */
+    }
+    .hero h3,
+    .hero img {
+        max-width: 90%; /* Opcional: reduce un poco el ancho para márgenes internos */
+        align-self: center; /* Asegura que los elementos estén centrados en el eje transversal */
+    }
+}
