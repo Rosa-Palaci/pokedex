@@ -1,24 +1,60 @@
+:root {
+    --altura-header: 80px;
+    --padding-left-right: 2em;
+    --ancho-max: 1200px;
+}
 body {
     width: auto;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin: 0%;
 }
 
 nav img {
     height: 55px;
 }
 
-nav ol {
-    list-style-type: none;
+nav {
     display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 10px;
 }
 
+nav ol {
+    list-style-type: none;
+    background-color: #88DAFF;
+    padding-inline-start: 0%;
+    width: 100%;
+    position: absolute;
+    top: var(--altura-header);
+    display: flex;
+    justify-content: center;
+    height: calc(100vh - var(--altura-header));
+    align-items: center;
+    flex-direction: column;
+    margin-block-start: 0%;
+    margin-block-end: 0%;
+    margin-inline-start: -10px;
+    gap: 3em;
+    height: 0;
+    overflow: hidden;
+}
+/*
 nav ol li {
     margin: 14px;
+}*/
+
+a {
+    text-decoration: none;
+    font-size: 2em;
+    color: black;
+
+}
+
+.menu-pokeball {
+    display: none;
 }
 
 .video-bg {
