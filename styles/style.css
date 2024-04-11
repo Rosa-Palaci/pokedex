@@ -41,6 +41,10 @@ nav ol {
     height: 0;
     overflow: hidden;
 }
+
+.icon-pokeball-pikachu{
+    height: 70px;
+}
 /*
 nav ol li {
     margin: 14px;
@@ -55,6 +59,10 @@ a {
 
 .menu-pokeball {
     display: none;
+}
+
+.menu-pokeball:checked + ol-links {
+    height: calc(100vh - var(--altura-header));
 }
 
 .video-bg {
