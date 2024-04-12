@@ -40,6 +40,8 @@ nav ol {
     gap: 3em;
     height: 0;
     overflow: hidden;
+
+    transition: all .3s;
 }
 
 .icon-pokeball-pikachu{
@@ -61,7 +63,7 @@ a {
     display: none;
 }
 
-.menu-pokeball:checked + ol-links {
+.menu-pokeball:checked + .ol-links {
     height: calc(100vh - var(--altura-header));
 }
 
@@ -110,5 +112,17 @@ main h1 {
     .hero img {
         max-width: 90%; /* Opcional: reduce un poco el ancho para márgenes internos */
         align-self: center; /* Asegura que los elementos estén centrados en el eje transversal */
+    }
+}
+
+@media (min-width:768px){
+    .label-pokeball{
+        display: none;
+    }
+    .ol-links{
+        position: static;
+        width: auto;
+        flex-direction: row;
+        gap: 1rem;
     }
 }
