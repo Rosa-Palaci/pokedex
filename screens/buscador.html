@@ -25,10 +25,24 @@
     </nav>
     <main>
         <h1>Mini Pokedex</h1>
-        <button id="apiButton">Buscar pokemon</button>
-        
-        <p id="apiData"></p>
-        <p id="base_experience"></p>
+        <div id="display" class="display">MOVES ABILITY TYPE</div>
+        <div id="pokemonNumber" class="pokemon-number"></div>
+        <div id="keypad">
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('0')">0</button>
+        </div>
+
+        <button id="apiButton">Buscar</button>
+        <button id="Borrar">Borrar</button>
+    
         <script src="../js/buscador.js"></script>
     </main>
 </body>

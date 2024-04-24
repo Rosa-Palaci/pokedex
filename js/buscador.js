@@ -1,16 +1,39 @@
+const display = document.getElementById('display');
+const pokemonNumber = document.getElementById('pokemonNumber');
 const apiButton = document.getElementById('apiButton');
-const apiData = document.getElementById('apiData');
-const base_experience =document.getElementById('base_experience');
+const buttons = document.querySelectorAll('#keypad button');
 
-const callAPI = () =>{
-    fetch('https://pokeapi.co/api/v2/pokemon/ditto')
-    .then(res => res.json())
-    .then(data =>{
-        console.log(data)
-        apiData.innerText = JSON.stringify(data);
-        base_experience.innerText = `Experiencia Base: ${JSON.stringify(data.base_experience)}`;
-    })
-    .catch(e => console.log(new Error(e)));
+function appendToDisplay(number) {
+  pokemonNumber.textContent += number;
+  display.textContent = pokemonNumber.textContent; // Actualiza el display con el número ingresado
 }
 
-apiButton.addEventListener('click', callAPI);
+buttons.forEach(button => {
+  button.addEventListener('click', () => appendToDisplay(button.textContent));
+});
+
+function searchPokemonData() {
+  const pokemonId = pokemonNumber.textContent;
+  const apiUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
+
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      display.textContent = `Moves: ${data.moves.map(move => move.move.name).join(', ')}
+                             Abilities: ${data.abilities.map(ability => ability.ability.name).join(', ')}
+                             Type: ${data.types.map(type => type.type.name).join(', ')}`;
+    })
+    .catch(error => {
+      console.error('Error fetching data: ', error);
+      display.textContent = 'Error al buscar el Pokémon';
+    });
+}
+
+
+apiButton.addEventListener('click', searchPokemonData);
+
+buttons.forEach(btn => {
+  btn.onclick = function() {
+    appendToDisplay(this.textContent);
+  };
+});
