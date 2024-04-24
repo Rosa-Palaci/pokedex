@@ -150,3 +150,9 @@ main h1 {
         display: flex; 
     }
 }
+
+@media (max-width: 767px) {
+    nav ol, .ol-links {
+        background-color: #88DBFF;
+    }
+}

@@ -1,0 +1,108 @@
+:root {
+    --altura-header: 80px;
+    --padding-left-right: 2em;
+    --ancho-max: 1200px;
+}
+body {
+    width: auto;
+    margin: 0%;
+}
+
+nav img {
+    height: 55px;
+}
+
+nav {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 10px;
+}
+
+nav ol {
+    list-style-type: none;
+    padding-inline-start: 0%;
+    width: 100%;
+    position: absolute;
+    top: var(--altura-header);
+    display: flex;
+    justify-content: center;
+    height: calc(100vh - var(--altura-header));
+    align-items: center;
+    flex-direction: column;
+    margin-block-start: 0%;
+    margin-block-end: 0%;
+    margin-inline-start: -10px;
+    gap: 3em;
+    height: 0;
+    overflow: hidden;
+
+    transition: all .3s;
+}
+
+.icon-pokeball-pikachu{
+    height: 70px;
+}
+
+nav ol li {
+    margin: 10px;
+}
+
+nav ol li a {
+    font-size: 1.2em;
+}
+
+nav ol li:hover {
+    background-color: #E32E4B; 
+    border-radius: 5px; 
+    transition: background-color 0.3s, color 0.3s; 
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+nav ol li a:hover {
+    color: #ffffff; 
+    transition: color 0.1s; 
+    padding: 10px;
+}
+
+
+a {
+    text-decoration: none;
+    font-size: 2em;
+    color: black;
+
+}
+
+.menu-pokeball {
+    display: none;
+}
+
+.menu-pokeball:checked + .ol-links {
+    height: calc(100vh - var(--altura-header));
+}
+@media (min-width:768px){
+    .label-pokeball{
+        display: none;
+    }
+    nav ol {
+        position: static;
+        width: auto;
+        flex-direction: row;
+        gap: 1.2rem;
+        height: auto; 
+        overflow: visible; 
+    }
+    .ol-links {
+        display: flex; 
+    }
+}
+
+@media (max-width: 767px) {
+    nav ol, .ol-links {
+        background-color: #d5ff88;
+    }
+}
