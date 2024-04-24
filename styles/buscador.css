@@ -143,3 +143,24 @@ a {
 #keypad button:active {
     background-color: #0051a4; 
   }
+
+/*Versión 1*/
+@media (max-width: 400px) {
+    .controls_button-yellow{
+        width: 200px;
+        margin-top: 10px;
+    }   
+}
+
+.controls_button-yellow{
+    width: 220px;
+    height: 50px;
+    border-radius: 5px;
+    background-color:#f9ee60;
+    font-family: "Share Tech Mono", monospace;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    outline: none;
+
+}
