@@ -47,10 +47,14 @@ nav ol {
 .icon-pokeball-pikachu{
     height: 70px;
 }
-/*
+
 nav ol li {
     margin: 14px;
-}*/
+}
+
+nav ol li a {
+    font-size: 1.2em;
+}
 
 a {
     text-decoration: none;
@@ -82,7 +86,7 @@ a {
 }
 
 main img {
-    width: 500px;
+    width: 100px;
 }
 
 main h1 {
@@ -91,27 +95,28 @@ main h1 {
 
 .hero {
     display: flex;
-    text-align: center; /**/
-    align-items: center; /*Centrar en horizontal*/
-    justify-content: center; /*Centrar en vertical*/
-    gap: 40px; /*Espacio entre elementos*/
+    text-align: center;
+    align-items: center;
+    justify-content: center; 
+    gap: 40px; 
+    padding: 30px;
 }
 
 .hero h3,
 .hero img {
-    flex: 1; /* Permite que ambos elementos crezcan y ocupen espacio disponible */
-    max-width: 100%; /* Asegura que no excedan el tamaño del contenedor */
+    flex: 1; 
+    max-width: 38%; 
 }
 
 /* Media query para pantallas de 768px o menos */
 @media (max-width: 768px) {
     .hero {
-        flex-direction: column; /* Alinea los elementos en columna en pantallas pequeñas */
+        flex-direction: column; 
     }
     .hero h3,
     .hero img {
-        max-width: 90%; /* Opcional: reduce un poco el ancho para márgenes internos */
-        align-self: center; /* Asegura que los elementos estén centrados en el eje transversal */
+        max-width: 90%; 
+        align-self: center; 
     }
 }
 
@@ -119,10 +124,15 @@ main h1 {
     .label-pokeball{
         display: none;
     }
-    .ol-links{
+    nav ol {
         position: static;
         width: auto;
         flex-direction: row;
-        gap: 1rem;
+        gap: 1.2rem;
+        height: auto; 
+        overflow: visible; 
+    }
+    .ol-links {
+        display: flex; 
     }
 }
