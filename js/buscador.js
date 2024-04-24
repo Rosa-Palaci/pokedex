@@ -1,16 +1,29 @@
 const display = document.getElementById('display');
 const pokemonNumber = document.getElementById('pokemonNumber');
 const apiButton = document.getElementById('apiButton');
+const clearButton = document.getElementById('clearButton'); 
 const buttons = document.querySelectorAll('#keypad button');
 
 function appendToDisplay(number) {
-  pokemonNumber.textContent += number;
-  display.textContent = pokemonNumber.textContent; // Actualiza el display con el número ingresado
+  if (pokemonNumber.textContent.length < 3) { 
+    pokemonNumber.textContent += number;
+    display.textContent = pokemonNumber.textContent; 
+  }
+}
+
+function clearDisplay() {
+  pokemonNumber.textContent = '';
+  display.textContent = ''; 
 }
 
 buttons.forEach(button => {
-  button.addEventListener('click', () => appendToDisplay(button.textContent));
+  button.addEventListener('click', (event) => {
+    appendToDisplay(event.target.textContent);
+  });
 });
+
+apiButton.addEventListener('click', searchPokemonData);
+clearButton.addEventListener('click', clearDisplay); 
 
 function searchPokemonData() {
   const pokemonId = pokemonNumber.textContent;
@@ -28,12 +41,3 @@ function searchPokemonData() {
       display.textContent = 'Error al buscar el Pokémon';
     });
 }
-
-
-apiButton.addEventListener('click', searchPokemonData);
-
-buttons.forEach(btn => {
-  btn.onclick = function() {
-    appendToDisplay(this.textContent);
-  };
-});
