@@ -5,10 +5,10 @@ const clearButton = document.getElementById('clearButton');
 const buttons = document.querySelectorAll('#keypad button');
 
 function appendToDisplay(number) {
-  if (pokemonNumber.textContent.length < 3) { 
+    
     pokemonNumber.textContent += number;
     display.textContent = pokemonNumber.textContent; 
-  }
+
 }
 
 function clearDisplay() {
