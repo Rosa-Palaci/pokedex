@@ -7,6 +7,7 @@ body {
     width: auto;
     margin: 0%;
     background-image: url(../images/bg-entrenadores.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -133,7 +134,28 @@ a {
 
 }
 
+#entrenadores li {
+    flex: 1;
+    min-width: 250px;
+}
+
 #entrenadores img {
     border-radius: 50%;
     box-shadow: 0px 0px 100px rgba(255, 255, 255);
+}
+
+@media (max-width: 768px) {
+    #entrenadores ol {
+        flex-direction: column; /* Apila los elementos de la lista verticalmente */
+        align-items: center; /* Centra los elementos de la lista en la dirección transversal */
+    }
+
+    #entrenadores li {
+        max-width: 100%; /* Permite que cada elemento de la lista ocupe el ancho completo */
+    }
+
+    /* Ajusta el tamaño de las imágenes si es necesario */
+    #entrenadores img {
+        max-width: 200px; /* O cualquier otro ancho preferido */
+    }
 }
