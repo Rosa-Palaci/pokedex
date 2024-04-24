@@ -6,7 +6,7 @@
 body {
     width: auto;
     margin: 0%;
-    /*background-image: url(../images/bd-campo-pokemon.jpg);*/
+    background-image: url(../images/bd-campo-pokemon.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -111,6 +111,10 @@ a {
     }
 }
 
+.pokedex{
+    background-color: #E92141;
+}
+
 .pokemon-number {
     background-color: green;
     color: white;
@@ -118,3 +122,24 @@ a {
     padding: 10px;
     margin: 10px;
 }
+
+#keypad {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px; 
+    padding: 20px;
+    width: 300px;
+    margin: auto;
+}
+
+#keypad button {
+    font-size: 20px;
+    background-color: #01DBFF;
+    border: none;
+    border-radius: 2px; 
+    cursor: pointer;
+}
+
+#keypad button:active {
+    background-color: #0051a4; 
+  }
