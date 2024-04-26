@@ -1,31 +1,28 @@
-function searchPokemonData() {
-  const pokemonId = pokemonNumber.textContent;
-  const apiUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
+class StatsScreen {
+  constructor() {
+      this.statsScreen = document.getElementById('statsScreen');
+  }
 
-  fetch(apiUrl)
-    .then(response => response.json())
-    .then(data => {
-      display.textContent = `Moves: ${data.moves.map(move => move.move.name).join(', ')}
-                             Abilities: ${data.abilities.map(ability => ability.ability.name).join(', ')}
-                             Type: ${data.types.map(type => type.type.name).join(', ')}`;
-    })
-    .catch(error => {
-      console.error('Error fetching data: ', error);
-      display.textContent = 'Error al buscar el Pokémon';
-    });
+  printStats(pokemon) {
+      const { stats } = pokemon;
+      this.statsScreen.innerHTML = '';
+      stats.forEach(stat => {
+          const statItem = `
+              <p class='stats-screen-item'>${stat.stat.name}: <span>${stat.base_stat}</span></p>
+          `;
+          this.statsScreen.innerHTML += statItem;
+      });
+  }
 }
+
+const statsScreen = new StatsScreen();
 
 document.getElementById('search').addEventListener('keypress', function(event) {
   if (event.key === 'Enter') {
-      event.preventDefault(); // Previene la funcionalidad por defecto del Enter
+      event.preventDefault(); 
+      const pokemonId = this.value.toLowerCase();
+      const apiUrl = 'https://pokeapi.co/api/v2/pokemon/' + pokemonId;
 
-      // Obtiene el valor ingresado en el input
-      var pokemonId = this.value.toLowerCase();
-
-      // Crea la URL para la PokeAPI
-      var apiUrl = 'https://pokeapi.co/api/v2/pokemon/' + pokemonId;
-
-      // Llama a la API para obtener información del Pokémon
       fetch(apiUrl)
           .then(response => {
               if (response.ok) {
@@ -34,14 +31,19 @@ document.getElementById('search').addEventListener('keypress', function(event) {
               throw new Error('No se encontró el Pokémon.');
           })
           .then(data => {
-              var pokemonName = data.name; // Nombre del Pokémon
-              var pokemonImage = data.sprites.front_default; // Imagen del Pokémon
+              const pokemonName = data.name; 
+              const pokemonImage = data.sprites.front_default; 
 
-              document.getElementById('screen').innerHTML = '<img src="' + pokemonImage + '" alt="' + pokemonName + '"><p>' + pokemonName + '</p>';
+              document.getElementById('screen').innerHTML = '<img src="' + pokemonImage + '" alt="' + pokemonName + '">';
+              document.getElementById('name').textContent = pokemonName;
+
+              statsScreen.printStats(data);
           })
           .catch(error => {
               console.error('Error:', error);
               document.getElementById('screen').innerHTML = '<p>Pokémon no encontrado. Intente con otro nombre o ID.</p>';
+              document.getElementById('name').textContent = 'Pokémon no encontrado';
+              document.getElementById('statsScreen').innerHTML = ''; 
           });
   }
 });

@@ -24,11 +24,70 @@
           </ol>
     </nav>
     <main>
-        <div class="pokedex">
-            <div class="screen_pokemon" id="screen"></div>
-            <input class="controls_button-yellow" type = "text" name="pokemonId" id="search" placeholder="Busca un pokemon">
-            <script src="../js/buscador.js"></script>
+
+      <div class="pokedex">
+        <div class="screen">
+        <div class="screen-lights">
+          <div class="screen-light"></div>
+          <div class="screen-light"></div>
         </div>
+
+          <div class="screen_pokemon" id="screen">
+            <img class="screen-image" id="img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="pokemon-prueba">
+          </div>
+
+        <div class="screen-buttons">
+          <div class="screen-button">
+            <small class="screen-message">Capturado!</small>
+          </div>
+          <p class="screen-name" id="name">bulbasaur</p>
+          <div class="creen-sound">
+            <div class="screen-sound-outlet"></div>
+            <div class="screen-sound-outlet"></div>
+            <div class="screen-sound-outlet"></div>
+          </div>
+        </div>
+        
+      </div>
+
+      <div id="statsScreen" class="statsScreen">
+        <p class="stats-screen-item">
+          "hp: "
+          <span>45</span>
+        </p>
+        <p class="stats-screen-item">
+          "attack: "
+          <span>49</span>
+        </p>
+        <p class="stats-screen-item">
+          "defense: "
+          <span>49</span>
+        </p>
+        <p class="stats-screen-item">
+          "special-attack: "
+          <span>65</span>
+        </p>
+        <p class="stats-screen-item">
+          "special-defense: "
+          <span>65</span>
+        </p>
+        <p class="stats-screen-item">
+          "speed: "
+          <span>45</span>
+        </p>
+      </div>
+      </div>
+
+      
+
+      <div class="controls">
+        <input class="controls_button-yellow" type = "text" name="pokemonId" id="search" placeholder="Busca un pokemon">
+      </div>
+
+      
+
+      
+      <script src="../js/buscador.js"></script>
     </main>
 </body>
 </html>
