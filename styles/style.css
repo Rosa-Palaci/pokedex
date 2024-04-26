@@ -89,7 +89,7 @@ a {
     position: fixed;
     top: 40%;
     left: 50%;
-    z-index: -1; /*Mantener al fondo*/
+    z-index: -1; 
     transform: translate(-50%, -50%);
     width: 100vw;
     height: 56.25vw;
@@ -122,14 +122,13 @@ main h1 {
     max-width: 38%; 
 }
 
-/* Media query para pantallas de 768px o menos */
 @media (max-width: 768px) {
     .hero {
         flex-direction: column; 
     }
     .hero h3,
     .hero img {
-        max-width: 90%; 
+        width: 100%; 
         align-self: center; 
     }
 }

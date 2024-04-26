@@ -37,7 +37,6 @@ document.getElementById('search').addEventListener('keypress', function(event) {
               var pokemonName = data.name; // Nombre del Pokémon
               var pokemonImage = data.sprites.front_default; // Imagen del Pokémon
 
-              // Actualiza el div screen_pokemon con la imagen y el nombre
               document.getElementById('screen').innerHTML = '<img src="' + pokemonImage + '" alt="' + pokemonName + '"><p>' + pokemonName + '</p>';
           })
           .catch(error => {
